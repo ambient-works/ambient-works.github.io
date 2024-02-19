@@ -1,4 +1,13 @@
+@keyframes blink {
+    0%, 50%, 100% {
+      opacity: 1;
+    }
+    25%, 75% {
+      opacity: 0;
+    }
+  }
 
+  
 body {
     font-family: 'Space Grotesk', sans-serif;
     background-image: url('img/ambientworks_bg.png');
@@ -6,25 +15,47 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     font-size: 16px;
+    color: #E9E9E9;
     /* display: flex; */
     /* justify-content: center;
     align-items: center; */
 }
 
-
-.fixed-header {
+.sticky-header {
     position: fixed;
     top: 0;
-    left: 0;
-    width: 100%;
+    width: 99%;
+    padding: 20px 20px;
     display: flex;
+    justify-content: space-between; /* Adjusted for desktop */
     align-items: center;
-    padding: 10px 20px;
+    z-index: 1000;
 }
 
-.fixed-header img {
-    max-height: 30px; /* Adjust the max-height as needed */
+.logo {
+    max-height: 45px;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+}
+
+.banner {
+    display: flex;
+    align-items: center;
+    padding-right: 20px;
+}
+
+.banner img {
     margin-right: 10px;
+    animation: blink 4s infinite; /* Adjust the duration as needed */
+}
+
+.banner h2 {
+    padding-bottom: 2px;
+    font-weight: 400;
+    font-size: 1.5em;
 }
 
 
@@ -75,31 +106,6 @@ h2 {
     margin-left: auto;
 }
 
-/* @media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-    }
-
-    .text,
-    .product {
-        width: 100%;
-    }
-
-    .text {
-        padding: 20px 0;
-    }
-
-    .text h1 {
-        font-size: 28px;
-    }
-
-    .text h2 {
-        font-size: 16px;
-    }
-}  */
-
-
-/* Style the email field in the Mailchimp form */
 .mc-field-group {
     display: flex;
 }
@@ -108,8 +114,12 @@ h2 {
     border-radius: 10px;
     border: none;
     padding: 10px;
-    width: 70%; /* Adjust the width as needed */
+    width: 70%; 
     margin-right: 10px;
+}
+
+#mce-EMAIL::placeholder {
+    font-size: 1.5em; 
 }
 
 .button {
@@ -132,3 +142,43 @@ h2 {
 
 
 
+@media screen and (max-width: 768px) {
+    body {
+        background-image: none;
+        background-color: #808080;
+    }
+
+    .sticky-header {
+        justify-content: center; /* Center the logo on mobile */
+    }
+
+    .header-content {
+        display: none; /* Hide header content on mobile */
+    }
+
+    .banner {
+        display: none; /* Hide the banner on mobile */
+    }
+
+    .main {
+        flex-direction: column-reverse;
+    }
+
+    .left {
+        text-align: center;
+        padding: 20px;
+    }
+
+    .title {
+        padding-top: 50px;
+    }
+
+    .sub {
+        padding-top: 10px;
+    }
+
+    .product {
+        position: relative;
+        width: 100%;
+    }
+}
