@@ -139,46 +139,46 @@ h2 {
     background-color: #1b1b1b;
 }
 
+.product_mobile img {
+    display: none;
+}
 
 
 
 @media screen and (max-width: 768px) {
     body {
-        background-image: none;
+        /* background-image: none; */
         background-color: #808080;
     }
 
     .sticky-header {
-        justify-content: center; /* Center the logo on mobile */
+        justify-content: center; 
     }
 
     .header-content {
-        display: none; /* Hide header content on mobile */
+        display: none; 
     }
 
     .banner {
-        display: none; /* Hide the banner on mobile */
+        display: none; 
     }
 
-    .main {
-        flex-direction: column-reverse;
+    .product img {
+        display: none;
     }
 
-    .left {
-        text-align: center;
-        padding: 20px;
+    .product_mobile {
+        bottom: 0;
+        position: fixed;
+        height: 100%;
+        z-index: -1
     }
-
-    .title {
-        padding-top: 50px;
-    }
-
-    .sub {
-        padding-top: 10px;
-    }
-
-    .product {
-        position: relative;
-        width: 100%;
+    
+    .product_mobile img {
+        display:block;
+        max-height: 100%;
+        width: auto;
+        display: block;
+        margin-left: auto;
     }
 }
