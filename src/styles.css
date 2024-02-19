@@ -23,8 +23,8 @@ body {
 
 a {
     color: #E9E9E9;
-    text-decoration: none; /* no underline */
-  }
+    text-decoration: underline;
+}
 
 .sticky-header {
     position: fixed;
