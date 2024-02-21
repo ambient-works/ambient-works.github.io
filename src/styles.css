@@ -152,8 +152,8 @@ h2 {
 
 @media screen and (max-width: 768px) {
     body {
-        background-image: none;
-        background-color: #808080;
+        /* background-image: none; */
+        /* background-color: #808080; */
     }
 
     .sticky-header {
